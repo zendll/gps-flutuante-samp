@@ -60,11 +60,11 @@ Dialog:GPS(playerid, response, listitem, inputtext[]){
     for(new i = 0; i < sizeof locaisGPS; i++){
         format(string, sizeof string, "%s%s\t[%.1f metros]\n", string, locaisGPS[i][gps_local], GetPlayerDistanceFromPoint(playerid, locaisGPS[i][gps_X], locaisGPS[i][gps_Y], locaisGPS[i][gps_Z]));
     }
-    Dialog_Show(playerid, gps_frac, DIALOG_STYLE_TABLIST, "Rodovias", string, "Selecionar", "Cancelar");
+    Dialog_Show(playerid, D_GPS, DIALOG_STYLE_TABLIST, "Rodovias", string, "Selecionar", "Cancelar");
     return 1;
 }
 
-Dialog:gps_frac(playerid, response, listitem, inputtext[]){
+Dialog:D_GPS(playerid, response, listitem, inputtext[]){
 
     if (!response) return 1;
 
@@ -80,12 +80,14 @@ Dialog:gps_frac(playerid, response, listitem, inputtext[]){
 }
 
 hook OnPlayerUpdate(playerid){
+        //ideal usar uma timer, caso nao queira so remover e deixa fora
+        //AtualizarGPS(playerid);
     static delay[MAX_PLAYERS];
-    AtualizarGPS(playerid);
-    /*if(delay[playerid] < gettime()){
-        
+    
+    if(delay[playerid] < gettime()){
+        AtualizarGPS(playerid);
         delay[playerid] = gettime()+1;
-    }*/
+    }
     return 1;
 }
 

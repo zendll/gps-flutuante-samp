@@ -58,9 +58,9 @@ Dialog:GPS(playerid, response, listitem, inputtext[]){
     new string[2 * 250]; 
 
     for(new i = 0; i < sizeof locaisGPS; i++){
-        format(string, sizeof string, "%s%s\t[%.1f metros]\n", string, locaisGPS[i][gps_local], GetPlayerDistanceFromPoint(playerid, locaisGPS[i][gps_X], locaisGPS[i][gps_Y], locaisGPS[i][gps_Z]));
+        format(string, sizeof string, "{fffffff}%s%s\t{9a9a9a}%.1f {ffffff}metros\n", string, locaisGPS[i][gps_local], GetPlayerDistanceFromPoint(playerid, locaisGPS[i][gps_X], locaisGPS[i][gps_Y], locaisGPS[i][gps_Z]));
     }
-    Dialog_Show(playerid, D_GPS, DIALOG_STYLE_TABLIST, "Rodovias", string, "Selecionar", "Cancelar");
+    Dialog_Show(playerid, D_GPS, DIALOG_STYLE_TABLIST, "Locais GPS", string, "Selecionar", "Cancelar");
     return 1;
 }
 

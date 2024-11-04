@@ -9,6 +9,8 @@
 
 */
 
+Nescessario YSI, sscanf, EasyDialog
+
 
 new ObjetoGPS[MAX_PLAYERS];  
 new Float:gps_x[MAX_PLAYERS], Float:gps_y[MAX_PLAYERS], Float:gps_z[MAX_PLAYERS];

@@ -9,7 +9,7 @@
 
 */
 
-Nescessario YSI, sscanf, EasyDialog
+Nescessario YSI, EasyDialog
 
 
 new ObjetoGPS[MAX_PLAYERS];  
